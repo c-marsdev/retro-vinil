@@ -2,15 +2,19 @@ import { Link } from "react-router-dom";
 import { useAuthContext } from "../context/AppContextAuth";
 import { useCartContext } from "../context/AppContextCart";
 import { useState } from "react";
+import Carrito from "../assets/Carrito";
+import Admin from "../assets/Admin";
+import User from "../assets/User";
 
 const Header = () => {
   const { isAuthenticated, usuario, cerrarSesion } = useAuthContext();
   const { carrito } = useCartContext();
   const [isToggleOpen, setIsToggleOpen] = useState(false);
+  console.info(usuario);
   return (
     <>
       {/*<!-- Component: Basic Navbar --> */}
-      <header className=" relative z-20 w-full border-b-2 border-gray-700  bg-white/90 shadow-lg shadow-slate-700/5 after:absolute after:left-0 after:top-full after:z-10 after:block after:h-px after:w-full after:bg-slate-200 lg:backdrop-blur-sm lg:after:hidden md:border-b-2 md: border-gray-700">
+      <header className=" relative z-20 w-full border-b-2 border-gray-700  bg-white/90 shadow-lg shadow-slate-700/5 after:absolute after:left-0 after:top-full after:z-10 after:block after:h-px after:w-full after:bg-slate-200 lg:backdrop-blur-sm lg:after:hidden md:border-b-2 md: border-gray-700 font-archivo-black  ">
         <div className="relative mx-auto max-w-full px-6 lg:max-w-5xl xl:max-w-7xl 2xl:max-w-[96rem]">
           <nav
             aria-label="main navigation"
@@ -115,14 +119,21 @@ const Header = () => {
                   <span>About</span>
                 </a>
               </li>
+              <li></li>
             </ul>
             <div class="flex items-center px-6 ml-auto lg:ml-0 lg:p-0">
+              <div className="mx-4  px-2">
+                <Carrito />
+              </div>
+              <div className="mx-2  px-2 ">
+                {isAuthenticated &&
+                  (usuario.nombre === "admin" ? <Admin /> : <User />)}
+              </div>
               {isAuthenticated ? (
                 <div>
-                  <span>Hola, {usuario.nombre}</span>
                   <button
                     onClick={cerrarSesion}
-                    className="inline-flex items-center justify-center h-10 gap-2 px-5 text-sm font-public-sans font-semibold tracking-wide text-white transition duration-300 rounded shadow-md focus-visible:outline-none whitespace-nowrap bg-gray-900 shadow-gray-300 hover:bg-secondary-500 hover:shadow-sm hover:shadow-secondary-200 focus:bg-secondary-500 focus:shadow-sm focus:shadow-secondary-200 focus:border-gray-900 focus:border-2 focus:text-gray-900 disabled:cursor-not-allowed disabled:border-secondary-300 disabled:bg-secondary-300 disabled:shadow-none"
+                    className="inline-flex items-center justify-center h-10 gap-2 px-5 text-sm font-space-grotesk font-semibold tracking-wide text-white transition duration-300 rounded shadow-md focus-visible:outline-none whitespace-nowrap bg-gray-900 shadow-gray-300 hover:bg-secondary-500 hover:shadow-sm hover:shadow-secondary-200 focus:bg-secondary-500 focus:shadow-sm focus:shadow-secondary-200 focus:border-gray-900 focus:border-2 focus:text-gray-900 disabled:cursor-not-allowed disabled:border-secondary-300 disabled:bg-secondary-300 disabled:shadow-none"
                   >
                     <Link className="" to="/iniciar-sesion">
                       Cerrar Sesión
@@ -130,7 +141,7 @@ const Header = () => {
                   </button>
                 </div>
               ) : (
-                <button className="inline-flex items-center justify-center h-10 gap-2 px-5 text-sm font-public-sans font-semibold tracking-wide text-white transition duration-300 rounded shadow-md focus-visible:outline-none whitespace-nowrap bg-gray-900 shadow-gray-300 hover:bg-primary-500 hover:shadow-sm hover:shadow-primary-200 focus:bg-primary-500 focus:shadow-sm focus:shadow-primary-200 focus:border-gray-900 focus:border-2 focus:text-gray-900 disabled:cursor-not-allowed disabled:border-primary-300 disabled:bg-primary-300 disabled:shadow-none">
+                <button className="inline-flex items-center justify-center h-10 gap-2 px-5 text-sm font-space-grotesk font-semibold tracking-wide text-white transition duration-300 rounded shadow-md focus-visible:outline-none whitespace-nowrap bg-gray-900 shadow-gray-300 hover:bg-primary-500 hover:shadow-sm hover:shadow-primary-200 focus:bg-primary-500 focus:shadow-sm focus:shadow-primary-200 focus:border-gray-900 focus:border-2 focus:text-gray-900 disabled:cursor-not-allowed disabled:border-primary-300 disabled:bg-primary-300 disabled:shadow-none">
                   <Link className="" to="/iniciar-sesion">
                     Iniciar Sesión
                   </Link>

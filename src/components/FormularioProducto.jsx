@@ -1,6 +1,5 @@
 import { useState } from "react";
-
-import ListaPaises from "./ListaPaises";
+import Cargando from "./Cargando";
 
 const FormularioProducto = () => {
   // Estados del componente
@@ -1379,21 +1378,11 @@ const FormularioProducto = () => {
             {/*Boton */}
             <div className="flex justify-center p-6 ">
               <button
-                className="inline-flex items-center justify-center h-10 gap-2 px-5 text-sm font-public-sans font-semibold tracking-wide text-white transition duration-300 rounded shadow-md focus-visible:outline-none whitespace-nowrap bg-gray-900 shadow-gray-300 hover:bg-primary-500 hover:shadow-sm hover:shadow-primary-200 focus:bg-primary-500 focus:shadow-sm focus:shadow-primary-200 focus:border-gray-900 focus:border-1 focus:text-gray-900 disabled:cursor-not-allowed disabled:border-primary-300 disabled:bg-primary-300 disabled:shadow-none"
+                className="inline-flex items-center justify-center h-10 gap-2 px-5 text-sm font-space-grotesk font-semibold tracking-wide text-white transition duration-300 rounded shadow-md focus-visible:outline-none whitespace-nowrap bg-gray-900 shadow-gray-300 hover:bg-primary-500 hover:shadow-sm hover:shadow-primary-200 focus:bg-primary-500 focus:shadow-sm focus:shadow-primary-200 focus:border-gray-900 focus:border-1 focus:text-gray-900 disabled:cursor-not-allowed disabled:border-primary-300 disabled:bg-primary-300 disabled:shadow-none"
                 type="submit"
                 disabled={cargando}
-                // style={{
-                //   width: "100%",
-                //   padding: "12px",
-                //   backgroundColor: cargando ? "#ccc" : "darkolivegreen",
-                //   color: "white",
-                //   border: "none",
-                //   borderRadius: "4px",
-                //   fontSize: "16px",
-                //   cursor: cargando ? "not-allowed" : "pointer",
-                // }}
               >
-                {cargando ? "Agregando..." : "Agregar"}
+                {cargando ? <Cargando /> : "Agregar"}
               </button>
             </div>
           </form>
