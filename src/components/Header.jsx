@@ -11,6 +11,7 @@ const Header = () => {
   const { carrito } = useCartContext();
   const [isToggleOpen, setIsToggleOpen] = useState(false);
   console.info(usuario);
+  console.info(carrito);
   return (
     <>
       {/*<!-- Component: Basic Navbar --> */}
