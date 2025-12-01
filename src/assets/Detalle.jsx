@@ -1,9 +1,9 @@
-const User = () => {
+const Detalle = () => {
   return (
     <>
       <svg
-        width="36px"
-        height="36px"
+        width="24px"
+        height="24px"
         strokeWidth="1.6"
         viewBox="0 0 24 24"
         fill="none"
@@ -11,22 +11,21 @@ const User = () => {
         color="#080808"
       >
         <path
-          d="M8.5 9C8.22386 9 8 8.77614 8 8.5C8 8.22386 8.22386 8 8.5 8C8.77614 8 9 8.22386 9 8.5C9 8.77614 8.77614 9 8.5 9Z"
-          fill="#080808"
+          d="M12 11.5V16.5"
           stroke="#080808"
           strokeWidth="1.6"
           strokeLinecap="round"
           strokeLinejoin="round"
         ></path>
         <path
-          d="M14 9H16M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
+          d="M12 7.51L12.01 7.49889"
           stroke="#080808"
           strokeWidth="1.6"
           strokeLinecap="round"
           strokeLinejoin="round"
         ></path>
         <path
-          d="M7.5 14.5C7.5 14.5 9 16.5 12 16.5C15 16.5 16.5 14.5 16.5 14.5"
+          d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
           stroke="#080808"
           strokeWidth="1.6"
           strokeLinecap="round"
@@ -36,4 +35,4 @@ const User = () => {
     </>
   );
 };
-export default User;
+export default Detalle;

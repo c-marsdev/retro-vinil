@@ -5,7 +5,7 @@ import { useState } from "react";
 import Carrito from "../assets/Carrito";
 import Admin from "../assets/Admin";
 import User from "../assets/User";
-
+import Tooltip from "../components/Tooltip";
 const Header = () => {
   const { isAuthenticated, usuario, cerrarSesion } = useAuthContext();
   const { carrito } = useCartContext();
@@ -100,6 +100,23 @@ const Header = () => {
               <li>
                 <Link className="" to={`/productos/:id`}></Link>
               </li>
+              {isAuthenticated &&
+                (usuario?.nombre === "admin" ? (
+                  <li role="none" className="flex items-stretch">
+                    <Link
+                      role="menuitem"
+                      aria-haspopup="false"
+                      className="flex items-center gap-2 py-4 text-stone-900 transition-colors duration-300 hover:text-primary-500 focus:text-secondary-500 focus:outline-none focus-visible:outline-none 
+                   lg:px-8"
+                      to="/dashboard"
+                    >
+                      <span>Dashboard</span>
+                    </Link>
+                  </li>
+                ) : (
+                  ""
+                ))}
+
               <li role="none" className="flex items-stretch">
                 <a
                   role="menuitem"
@@ -122,13 +139,19 @@ const Header = () => {
               </li>
               <li></li>
             </ul>
-            <div class="flex items-center px-6 ml-auto lg:ml-0 lg:p-0">
+            <div className="flex items-center px-6 ml-auto lg:ml-0 lg:p-0">
               <div className="mx-4  px-2">
                 <Carrito />
               </div>
               <div className="mx-2  px-2 ">
                 {isAuthenticated &&
-                  (usuario.nombre === "admin" ? <Admin /> : <User />)}
+                  (usuario?.nombre === "admin" ? (
+                    <Tooltip>
+                      <Admin />
+                    </Tooltip>
+                  ) : (
+                    <User />
+                  ))}
               </div>
               {isAuthenticated ? (
                 <div>

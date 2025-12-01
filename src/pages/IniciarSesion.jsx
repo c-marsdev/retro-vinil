@@ -4,6 +4,7 @@ import { useAuthContext } from "../context/AppContextAuth";
 
 const IniciarSesion = () => {
   const { iniciarSesion } = useAuthContext();
+
   const navigate = useNavigate();
   const ubicacion = useLocation();
 

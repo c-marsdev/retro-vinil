@@ -1,24 +1,24 @@
-const Carrito = () => {
+const Eliminar = () => {
   return (
     <>
       <svg
-        width="36px"
-        height="36px"
-        strokeWidth="1.6"
+        width="24px"
+        height="24px"
         viewBox="0 0 24 24"
+        strokeWidth="1.6"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         color="#080808"
       >
         <path
-          d="M19.2609 9.69589L20.6455 18.6959C20.8319 19.9074 19.8945 21 18.6688 21H5.33122C4.10545 21 3.16809 19.9074 3.35448 18.6959L4.73909 9.69589C4.8892 8.72022 5.7287 8 6.71584 8H17.2842C18.2713 8 19.1108 8.72022 19.2609 9.69589Z"
+          d="M20 9L18.005 20.3463C17.8369 21.3026 17.0062 22 16.0353 22H7.96474C6.99379 22 6.1631 21.3026 5.99496 20.3463L4 9"
           stroke="#080808"
           strokeWidth="1.6"
           strokeLinecap="round"
           strokeLinejoin="round"
         ></path>
         <path
-          d="M14 5C14 3.89543 13.1046 3 12 3C10.8954 3 10 3.89543 10 5"
+          d="M21 6L15.375 6M3 6L8.625 6M8.625 6V4C8.625 2.89543 9.52043 2 10.625 2H13.375C14.4796 2 15.375 2.89543 15.375 4V6M8.625 6L15.375 6"
           stroke="#080808"
           strokeWidth="1.6"
           strokeLinecap="round"
@@ -28,4 +28,4 @@ const Carrito = () => {
     </>
   );
 };
-export default Carrito;
+export default Eliminar;
