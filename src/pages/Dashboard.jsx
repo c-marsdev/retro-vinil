@@ -1,16 +1,28 @@
-import React from "react";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../context/AppContextAuth";
 import { useProductosContext } from "../context/AppContextProductos";
 import ListaProductos from "../components/ListaProductos";
-import ModalFormulario from "../components/ModalFormulario";
+import Agregar from "../assets/Agregar";
+import Tooltip from "../components/Tooltip";
 
 const Dashboard = () => {
   const { usuario, cerrarSesion } = useAuthContext();
-  const [modoFormulario, setModoFormulario] = useState("agregar");
-  const [productoSeleccionado, setProductoSeleccionado] = useState(null);
+  const navigate = useNavigate();
 
+  //Manejadores
+  const handleAgregarProducto = () => {
+    navigate("/formulario-producto");
+  };
+
+  const handleEditar = (producto) => {
+    // Navegar al formulario de edición
+    navigate("/formulario-producto", { state: { producto } });
+  };
+
+  const handleDetalle = (producto) => {
+    // Navegar a la página de confirmación de eliminación
+    navigate(`/productos/${producto.id}`, { state: { producto } });
+  };
   // Obtener el token actual
   const tokenActual = localStorage.getItem("authToken");
   // Cargando contexto de producto
@@ -30,23 +42,23 @@ const Dashboard = () => {
             </h1>
           </div>
           <div className="col-span-4 lg:col-span-6 flex justify-center">
-            <ModalFormulario
-              id="agregar"
-              nombre="agregar"
-              boton="agregar"
-              productoInicial={productoSeleccionado || {}}
-              modo={modoFormulario}
-            />
-            {/* <Tooltip
-              id="agregar"
-              titulo="Agregar producto"
-              boton={<Agregar setMostrarForm={setMostrarForm} />}
-            /> */}
+            <button onClick={handleAgregarProducto}>
+              <Tooltip
+                id="agregar"
+                titulo="Agregar producto"
+                boton={<Agregar />}
+              />
+            </button>
           </div>
           <div className="col-span-4 lg:col-span-12  xs:justify-center sm:justify-center md:justify-center lg:justify-start">
             <div className="md:w-2xl lg:w-2xl">
               {productos.map((producto) => (
-                <ListaProductos key={producto.id} producto={producto} />
+                <ListaProductos
+                  key={producto.id}
+                  producto={producto}
+                  onEditar={() => handleEditar(producto)}
+                  onDetalle={() => handleDetalle(producto)}
+                />
               ))}
             </div>
           </div>

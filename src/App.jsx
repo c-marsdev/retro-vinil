@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -14,6 +14,7 @@ import Pagar from "./pages/Pagar";
 import FormularioProducto from "./components/FormularioProducto.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import { ProductosProvider } from "./context/ProductosContext.jsx";
+import EliminarProducto from "./pages/EliminarProducto.jsx";
 
 function App() {
   return (
@@ -37,22 +38,14 @@ function App() {
                     </RutaProtegida>
                   }
                 />
-                {/* <Route
-                  path="/agregar-producto"
-                  element={
-                    <RutaProtegida soloAdmin={true}>
-                      <AgregarProducto />
-                    </RutaProtegida>
-                  }
-                />
                 <Route
-                  path="/editar-producto"
+                  path="/formulario-producto"
                   element={
-                    <RutaProtegida soloAdmin={true}>
+                    <RutaProtegida>
                       <FormularioProducto />
                     </RutaProtegida>
                   }
-                /> */}
+                />
                 <Route
                   path="/dashboard"
                   element={
@@ -61,6 +54,7 @@ function App() {
                     </RutaProtegida>
                   }
                 />
+                <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>
               <Footer />
             </div>
