@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../context/AppContextAuth";
 import { useCartContext } from "../context/AppContextCart";
 import { useState } from "react";
@@ -10,8 +10,12 @@ const Header = () => {
   const { isAuthenticated, usuario, cerrarSesion } = useAuthContext();
   const { carrito } = useCartContext();
   const [isToggleOpen, setIsToggleOpen] = useState(false);
+  const navigate = useNavigate();
   console.info(usuario);
   console.info(carrito);
+  const irComprarCarrito = () => {
+    navigate("/carrito", { state: { carrito } });
+  };
   return (
     <>
       {/*<!-- Component: Basic Navbar --> */}
@@ -141,7 +145,9 @@ const Header = () => {
             </ul>
             <div className="flex items-center px-6 ml-auto lg:ml-0 lg:p-0">
               <div className="mx-4  px-2">
-                <Carrito />
+                <button onClick={irComprarCarrito}>
+                  <Carrito />
+                </button>
               </div>
               <div className="mx-2  px-2 ">
                 {isAuthenticated &&

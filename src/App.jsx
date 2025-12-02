@@ -14,7 +14,7 @@ import Pagar from "./pages/Pagar";
 import FormularioProducto from "./components/FormularioProducto.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import { ProductosProvider } from "./context/ProductosContext.jsx";
-import EliminarProducto from "./pages/EliminarProducto.jsx";
+import Carrito from "./pages/Carrito.jsx";
 
 function App() {
   return (
@@ -35,6 +35,14 @@ function App() {
                   element={
                     <RutaProtegida>
                       <Pagar />
+                    </RutaProtegida>
+                  }
+                />
+                <Route
+                  path="/carrito"
+                  element={
+                    <RutaProtegida>
+                      <Carrito />
                     </RutaProtegida>
                   }
                 />

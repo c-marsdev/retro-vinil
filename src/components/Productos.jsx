@@ -1,6 +1,6 @@
 import { useProductosContext } from "../context/AppContextProductos";
 import Card from "./Card";
-import Carrito from "./Carrito";
+import Carrito from "../pages/Carrito";
 
 const Productos = () => {
   const { productos, cargando, error } = useProductosContext();
@@ -14,7 +14,6 @@ const Productos = () => {
       {productos.map((producto) => (
         <Card key={producto.id} producto={producto} />
       ))}
-      <Carrito />
     </>
   );
 };

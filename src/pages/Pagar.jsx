@@ -1,15 +1,11 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../context/AppContextAuth";
+import { useCartContext } from "../context/AppContextCart";
 
 const Pagar = () => {
-  const {
-    isAuthenticated,
-    setIsAuthenticated,
-    usuario,
-    setUsuario,
-    vaciarCarrito,
-  } = useAuthContext();
-
+  const { isAuthenticated, setIsAuthenticated, usuario, setUsuario } =
+    useAuthContext();
+  const { vaciarCarrito } = useCartContext();
   const location = useLocation();
 
   const navigate = useNavigate();
@@ -18,7 +14,7 @@ const Pagar = () => {
   const carrito = location.state?.carrito || [];
   // Calculo del total
   const total = carrito.reduce(
-    (suma, producto) => suma + Number(producto.price),
+    (suma, producto) => suma + Number(producto.precio),
     0
   );
 
@@ -49,9 +45,9 @@ const Pagar = () => {
 
         {carrito.map((producto) => (
           <div key={producto.id}>
-            <img src={producto.img} alt={producto.title} />
-            <span>{producto.title}</span>
-            <strong>${producto.price}</strong>
+            <img src={producto.foto} alt={producto.titulo} />
+            <span>{producto.titulo}</span>
+            <strong>${producto.precio}</strong>
           </div>
         ))}
 

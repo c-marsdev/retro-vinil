@@ -21,7 +21,7 @@ const CartProvider = ({ children }) => {
         return [...prevCarrito, { ...producto, cantidad: 1 }];
       }
     });
-    alert(`Producto ${producto.name} agregado.`);
+    alert(`Producto ${producto.titulo} agregado.`);
   };
 
   const vaciarCarrito = () => {
@@ -64,12 +64,9 @@ const CartProvider = ({ children }) => {
 
   const total = carrito.reduce((sum, item) => {
     const cantidad = Number(item.cantidad) || 1;
-    return sum + Number(item.price) * cantidad;
+    return sum + Number(item.precio) * cantidad;
   }, 0);
 
-  // const vaciarCarrito = () => {
-  //   setCarrito([]);
-  // };
   const value = {
     // Carrito
     carrito,

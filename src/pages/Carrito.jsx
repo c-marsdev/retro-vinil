@@ -21,13 +21,13 @@ const Carrito = () => {
           {carrito.map((producto) => (
             <div key={producto.id}>
               <img
-                src={producto.image}
-                alt={producto.title}
+                src={producto.foto}
+                alt={producto.titulo}
                 height={80}
                 width={80}
               />
               <div>
-                {producto.title} : ${Number(producto.price).toFixed(3)}
+                {producto.titulo} : ${Number(producto.precio).toFixed(3)}
                 (Cantidad: {Number(producto.cantidad) || 1})
                 <button
                   className="btn"
@@ -43,7 +43,7 @@ const Carrito = () => {
                 </button>
               </div>
               <p>
-                {producto.title} : ${producto.price}
+                {producto.titilo} : ${producto.precio}
               </p>
               <button className="btn" onClick={vaciarCarrito}>
                 Vaciar Carrito
