@@ -1,7 +1,7 @@
-import { Link, useLocation, useParams } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import Tabs from "./Tabs";
 
 const ProductoDetalle = () => {
-  const { id } = useParams();
   const location = useLocation();
   const producto = location.state?.producto;
   if (!producto) {
@@ -16,63 +16,87 @@ const ProductoDetalle = () => {
   }
   return (
     <>
-      <h2>Detalles del Producto {id}</h2>
-      <div
-        key={producto.id}
-        className="border-2 rounded-xl m-2 flex flex-wrap justify-center"
-      >
-        <img src={producto.image} alt="Imagen del producto" width="55%" />
-        <h2>{producto.title}</h2>
-        <p> $ {producto.price}</p>
-        <p>{producto.category}</p>
-        <p>{producto.rating.rate}</p>
-        <p className="text-start">{producto.description}</p>
-        <Link to={`/productos`}>
-          <button type="button">Volver</button>
-        </Link>
-        <button></button>
-      </div>
-      {/*<!-- Component: Horizontal card--> */}
-      <div className="flex flex-col overflow-hidden border-2 border-gray-900 bg-white rounded shadow-md text-slate-500 shadow-slate-200 sm:flex-row">
-        {/*  <!-- Image --> */}
-        <figure className="flex-1">
-          <img
-            src="https://picsum.photos/id/118/800/600"
-            alt="card image"
-            className="object-cover min-h-full aspect-auto"
-          />
-        </figure>
-        {/*  <!-- Body--> */}
-        <div className="flex-1 p-6 sm:mx-6 sm:px-0">
-          <header className="flex gap-4 mb-4">
-            <a
-              href="#"
-              className="relative inline-flex items-center justify-center w-12 h-12 text-white rounded-full"
-            >
+      <h1 className="w-screen text-center font-archivo-black font-extrabold text-3xl max-[395px]:text-xl m-4 p-2">
+        Detalles del Producto
+      </h1>
+      <section>
+        <div className="container px-6 m-auto h-full justify-center">
+          <div className="grid grid-cols-4 gap-6 md:grid-cols-8 lg:grid-cols-12 mb-4">
+            <div className="col-span-4 lg:col-span-5">
               <img
-                src="https://i.pravatar.cc/48?img=24"
-                alt="user name"
-                title="user name"
-                width="48"
-                height="48"
-                className="max-w-full rounded-full"
+                src={producto.foto}
+                alt="Imagen del producto"
+                width="w-full"
               />
-            </a>
-            <div>
-              <h3 className="text-xl font-medium text-slate-700">
-                A day in the sun
-              </h3>
-              <p className="text-sm text-slate-400"> By Sue, jun 3 2023</p>
             </div>
-          </header>
-          <p>
-            After a walk through history, there is nothing left to do but admire
-            the hypnotizing landscapes that exist in every direction. From vast
-            deserts to rainbow mountains, and everything in between.
-          </p>
+            <div className="col-span-4 lg:col-span-7">
+              <header className="mb-4">
+                <h2 className="text-2xl font-bold text-gray-900 font-space-grotesk">
+                  {producto.titulo}
+                </h2>
+                <h5 className="text-xl font-public-sans font-medium text-primary-600">
+                  {producto.artista}
+                </h5>
+                <p className="text-lg font-nunito font-semibold text-secondary-500">
+                  {`${producto.moneda} $${producto.precio}`}
+                </p>
+              </header>
+              <div key={producto.id} className="">
+                <p className="font-nunito text-lg">
+                  <strong>Género: </strong> {producto.genero}
+                </p>
+                <p className="font-nunito text-lg">
+                  <strong>N° Catálogo: </strong> {producto.numCatalogo}
+                </p>
+                <p className="font-nunito text-lg">
+                  <strong>Formato: </strong> {producto.formato}
+                </p>
+                <p className="font-nunito text-lg">
+                  <strong>Velocidad: </strong> {producto.velocidad}
+                </p>
+                <p className="font-nunito text-lg">
+                  <strong>Cantidad de discos: </strong> {producto.cdadDiscos}
+                </p>
+                <p className="font-nunito text-lg">
+                  <strong>Edición: </strong> {producto.edicion}
+                </p>
+                <p className="font-nunito text-lg">
+                  <strong>Edición especial: </strong> {producto.edicionEspecial}
+                </p>
+                <p className="font-nunito text-lg">
+                  <strong>Duración total: </strong> {producto.duracionTotal}
+                </p>
+                <p className="font-nunito text-lg">
+                  <strong>Condición del vinilo: </strong>{" "}
+                  {producto.condicionVinil}
+                </p>
+                <p className="font-nunito text-lg">
+                  <strong>Condición de la funda: </strong>{" "}
+                  {producto.numCatalogo}
+                </p>
+                <p className="font-nunito text-lg">
+                  <strong>Extras: </strong> {producto.condicionFunda}
+                </p>
+                <p className="font-nunito text-lg">
+                  <strong>Origen: </strong> {producto.origen}
+                </p>
+                <p className="font-nunito text-lg">
+                  <strong>País: </strong> {producto.pais}
+                </p>
+                <Link to={`/productos`}>
+                  <button
+                    type="button"
+                    className="h-10 w-full my-2 inline-flex items-center justify-center gap-2 px-5 text-sm font-space-grotesk font-semibold tracking-wide text-white transition duration-300 rounded shadow-md focus-visible:outline-none whitespace-nowrap bg-primary-500 shadow-gray-300 hover:bg-gray-900 hover:shadow-sm hover:shadow-primary-200  focus:shadow-sm focus:shadow-gray-200 disabled:cursor-not-allowed disabled:border-gray-300 disabled:bg-gray-300 disabled:shadow-none"
+                  >
+                    Volver
+                  </button>
+                </Link>
+              </div>
+            </div>
+          </div>
+          <Tabs producto={producto} />
         </div>
-      </div>
-      {/*<!-- End Horizontal card--> */}
+      </section>
     </>
   );
 };
