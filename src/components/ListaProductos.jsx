@@ -27,7 +27,7 @@ const ListaProductos = ({ producto, onDetalle, onEditar }) => {
             </label>
             <p className="w-full text-sm text-slate-500">
               Artista: {artista} <br />
-              Precio: {precio}
+              Precio: ${precio}
             </p>
           </div>
           <div className="flex items-center self-center">
