@@ -122,26 +122,16 @@ const Header = () => {
                 ))}
 
               <li role="none" className="flex items-stretch">
-                <a
+                <Link
                   role="menuitem"
                   aria-haspopup="false"
-                  className="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-emerald-500 focus:text-emerald-600 focus:outline-none focus-visible:outline-none lg:px-8"
-                  href="javascript:void(0)"
+                  className="flex items-center gap-2 py-4 text-stone-900 transition-colors duration-300 hover:text-primary-500 focus:text-secondary-500 focus:outline-none focus-visible:outline-none 
+                   lg:px-8"
+                  to="/preguntas-frecuentes"
                 >
-                  <span>Pricing</span>
-                </a>
+                  <span>Preguntas frecuentes</span>
+                </Link>
               </li>
-              <li role="none" className="flex items-stretch">
-                <a
-                  role="menuitem"
-                  aria-haspopup="false"
-                  className="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-emerald-500 focus:text-emerald-600 focus:outline-none focus-visible:outline-none lg:px-8"
-                  href="javascript:void(0)"
-                >
-                  <span>About</span>
-                </a>
-              </li>
-              <li></li>
             </ul>
             <div className="flex items-center px-6 ml-auto lg:ml-0 lg:p-0">
               <div className="mx-4  px-2">

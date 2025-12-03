@@ -15,6 +15,7 @@ import FormularioProducto from "./components/FormularioProducto.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import { ProductosProvider } from "./context/ProductosContext.jsx";
 import Carrito from "./pages/Carrito.jsx";
+import PreguntasFrecuentes from "./pages/PreguntasFrecuentes.jsx";
 
 function App() {
   return (
@@ -30,6 +31,10 @@ function App() {
                 <Route path="/productos" element={<Productos />} />
                 <Route path="/productos/:id" element={<ProductoDetalle />} />
                 <Route path="/iniciar-sesion" element={<IniciarSesion />} />
+                <Route
+                  path="/preguntas-frecuentes"
+                  element={<PreguntasFrecuentes />}
+                />
                 <Route
                   path="/pagar"
                   element={

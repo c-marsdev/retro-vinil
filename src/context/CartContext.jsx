@@ -64,7 +64,9 @@ const CartProvider = ({ children }) => {
 
   const total = carrito.reduce((sum, item) => {
     const cantidad = Number(item.cantidad) || 1;
-    return sum + Number(item.precio) * cantidad;
+    return (
+      sum + Number(item.precio.replace(/\./g, "").replace(",", ".")) * cantidad
+    );
   }, 0);
 
   const value = {

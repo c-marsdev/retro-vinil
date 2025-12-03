@@ -1,4 +1,7 @@
+import { useCartContext } from "../context/AppContextCart";
+
 const Carrito = () => {
+  const { carrito } = useCartContext();
   return (
     <>
       <svg
@@ -25,6 +28,10 @@ const Carrito = () => {
           strokeLinejoin="round"
         ></path>
       </svg>
+      <span className="my-4 absolute -top-0.25 inline-flex items-center justify-center gap-1 rounded-full border-2 border-white bg-pink-500 px-1.5 text-sm text-white">
+        {carrito.length !== 0 ? ` ${carrito.length}` : ``}
+        <span className="sr-only"> new emails </span>
+      </span>
     </>
   );
 };

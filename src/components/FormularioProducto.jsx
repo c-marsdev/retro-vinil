@@ -350,6 +350,9 @@ const FormularioProducto = () => {
     if (modo === "editar") {
       alert("Edición cancelada");
       navigate("/productos");
+    } else {
+      alert("Producto cancelado");
+      navigate("/productos");
     }
   };
   console.log(producto);
