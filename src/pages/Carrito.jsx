@@ -49,9 +49,9 @@ const Carrito = () => {
                             Precio: ${producto.precio}
                           </p>
                         </div>
-                        <div className="flex items-center self-center">
+                        <div className="flex items-center self-center justify-center">
                           <div className="relative flex flex-wrap items-center mx-2">
-                            <div className="inline-flex overflow-hidden rounded max-sm:flex-col">
+                            <div className="inline-flex overflow-hidden rounded">
                               <button
                                 onClick={() => quitarCantidad(producto.id)}
                                 className="inline-flex h-10 items-center justify-center gap-2 whitespace-nowrap bg-secondary-500 px-5 text-sm font-medium tracking-wide text-white transition duration-300 hover:bg-secondary-600 focus:bg-secondary-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-secondary-300 disabled:bg-secondary-300 disabled:shadow-none"

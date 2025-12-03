@@ -359,7 +359,7 @@ const FormularioProducto = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="overflow-hidden rounded border-2 lg:w-full border-gray-700 bg-white text-gray-900 shadow-md shadow-slate-200"
+      className="m-8 mx-auto overflow-hidden rounded border-2 border-gray-700 bg-white text-gray-900 shadow-md shadow-slate-200 w-full max-w-3xl  "
     >
       <div className="p-6">
         <header className="mb-4 text-center">
@@ -1395,7 +1395,7 @@ const FormularioProducto = () => {
                   value={producto.listCanciones}
                   onChange={handleChange}
                   rows="3"
-                  maxLength="200"
+                  maxLength="2000"
                   placeholder="Mínimo 10 caracteres, máximo 200 caracteres"
                   aria-invalid={!!errores.listCanciones}
                   className="peer relative w-full border-b-2 border-gray-700 p-4 font-space-grotesk text-slate-500 placeholder-transparent outline-none transition-all autofill:bg-white invalid:border-pink-500 invalid:text-pink-500 focus:border-emerald-500 focus:outline-none invalid:focus:border-pink-500 focus-visible:outline-none disabled:cursor-not-allowed disabled:bg-slate-50 disabled:text-gray-900"
@@ -1413,7 +1413,7 @@ const FormularioProducto = () => {
                         Ingrese la lista de canciones
                       </span>
                       <span className="peer text-primary-400">
-                        Mínimo 10 caracteres, máximo 200 caracteres
+                        Mínimo 10 caracteres, máximo 2000 caracteres
                       </span>
                       <span>Ej: 1 - Nombre duración </span>
                     </div>

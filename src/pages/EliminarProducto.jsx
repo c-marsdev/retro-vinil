@@ -98,7 +98,7 @@ const EliminarProducto = ({ producto }) => {
               {/*    <!-- Modal --> */}
               <div
                 ref={wrapperRef}
-                className="flex max-h-[90vh]   max-w-xs flex-col gap-6 overflow-hidden rounded bg-white p-6 text-center text-slate-500 shadow-xl shadow-slate-700/10"
+                className=" border-2 border-gray-900 flex max-h-[90vh]   max-w-xs flex-col gap-6 overflow-hidden rounded bg-white p-6 text-center text-slate-500 shadow-xl shadow-slate-700/10"
                 id="modal"
                 role="document"
               >
@@ -109,7 +109,7 @@ const EliminarProducto = ({ producto }) => {
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="w-8 h-8 stroke-pink-500"
+                    className="w-8 h-8 stroke-secondary-500"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -139,13 +139,13 @@ const EliminarProducto = ({ producto }) => {
                 <div className="flex justify-start gap-2">
                   <button
                     onClick={() => eliminarProducto(producto.id)}
-                    className="inline-flex items-center justify-center flex-1 h-10 gap-2 px-5 text-sm font-medium tracking-wide text-white transition duration-300 rounded whitespace-nowrap bg-emerald-500 hover:bg-emerald-600 focus:bg-emerald-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-emerald-300 disabled:bg-emerald-300 disabled:shadow-none"
+                    className="inline-flex items-center justify-center flex-1 h-10 gap-2 px-5 text-sm font-medium tracking-wide text-white transition duration-300 rounded whitespace-nowrap bg-gray-900 hover:bg-secondary-500 focus:bg-secondary-500 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-secondary-300 disabled:bg-secondary-300 disabled:shadow-none"
                   >
                     <span>Aceptar</span>
                   </button>
                   <button
                     onClick={() => setIsShowing(false)}
-                    className="inline-flex items-center justify-center flex-1 h-10 gap-2 px-5 text-sm font-medium tracking-wide transition duration-300 rounded justify-self-center whitespace-nowrap text-emerald-500 hover:bg-emerald-100 hover:text-emerald-600 focus:bg-emerald-200 focus:text-emerald-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:text-emerald-300 disabled:shadow-none disabled:hover:bg-transparent"
+                    className="inline-flex items-center justify-center flex-1 h-10 gap-2 px-5 text-sm font-medium tracking-wide transition duration-300 rounded justify-self-center whitespace-nowrap text-primary-500 hover:bg-primary-100 hover:text-primary-600 focus:bg-primary-200 focus:text-primary-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:text-primary-300 disabled:shadow-none disabled:hover:bg-transparent"
                   >
                     <span>Cancelar</span>
                   </button>

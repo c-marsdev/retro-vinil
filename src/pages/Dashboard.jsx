@@ -34,14 +34,14 @@ const Dashboard = () => {
   return (
     <>
       <div className="container px-2 m-auto items-center">
-        <div className="grid grid-cols-4 gap-6 md:grid-cols-8 lg:grid-cols-12 m-4 p-2 ">
-          <div className="col-span-4 lg:col-span-6 sm:flex sm:justify-center md:justify-center lg:justify-center">
+        <div className="grid grid-cols-4 gap-6 md:grid-cols-8 lg:grid-cols-12 m-4">
+          <div className="col-span-4 lg:col-span-6 flex justify-center ">
             {" "}
-            <h1 className="font-archivo-black font-extrabold text-3xl ">
+            <h1 className="text-center font-archivo-black font-extrabold text-3xl">
               Gestión de Producto
             </h1>
           </div>
-          <div className="col-span-4 lg:col-span-6 flex justify-center">
+          <div className="col-span-4 lg:col-span-6 flex md:justify-start max-sm:justify-center  max-[500px]:w-full">
             <button onClick={handleAgregarProducto}>
               <Tooltip
                 id="agregar"

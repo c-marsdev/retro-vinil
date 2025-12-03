@@ -47,7 +47,7 @@ const IniciarSesion = () => {
     <div className="m-4">
       <form
         onSubmit={manejarEnvio}
-        className="overflow-hidden rounded bg-white text-gray-900 border-2 border-gray-900 shadow-md shadow-slate-200"
+        className="m-8 mx-auto overflow-hidden rounded border-2 border-gray-700 bg-white text-gray-900 shadow-md shadow-slate-200 w-full max-w-3xl"
       >
         <div className="p-6">
           <header className="mb-4 text-center">

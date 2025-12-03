@@ -1,7 +1,11 @@
+import BentoBox from "../components/BentoBox";
+
 const Inicio = () => {
   return (
     <>
-      <h1>Bienvenidos a Inicio</h1>
+      <div className="container px-6 m-auto">
+        <BentoBox />
+      </div>
     </>
   );
 };
