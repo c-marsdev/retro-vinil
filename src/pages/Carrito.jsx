@@ -17,7 +17,9 @@ const Carrito = () => {
         Carrito de Compras
       </h1>
       {carrito.length === 0 ? (
-        <h3>Carrito vacío</h3>
+        <h3 className="text-center text-3xl font-space-grotesk text-secondary-500">
+          Carrito vacío
+        </h3>
       ) : (
         <>
           <section>
