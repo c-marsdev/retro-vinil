@@ -66,27 +66,9 @@ const Dashboard = () => {
       </div>
 
       <p>
-        <strong>Sesión iniciada como: </strong> {usuario.nombre}
+        <strong className="font-space-grotesk">Sesión iniciada como: </strong>{" "}
+        {usuario.nombre}
       </p>
-
-      {/* SECCIÓN DEL TOKEN */}
-      <div>
-        <strong>Token de autenticación:</strong>
-        <br />
-        <code>{tokenActual}</code>
-      </div>
-
-      {/* SECCIÓN DE ACCIONES ADMIN */}
-      <div>
-        <h3>Acciones:</h3>
-        <div>
-          <Link to="/productos">Ver Todos los Productos</Link>
-        </div>
-      </div>
-      <hr></hr>
-
-      {/* BOTÓN CERRAR SESIÓN */}
-      <button onClick={cerrarSesion}>Cerrar sesión</button>
     </>
   );
 };
