@@ -35,7 +35,7 @@ const Header = () => {
               href="javascript:void(0)"
               to="/"
             >
-              <img src="./src/assets/logo.png" alt="logo" width="60px" />
+              <img src="./public/logo.png" alt="logo" width="60px" />
             </Link>
             {/*      <!-- Mobile trigger --> */}
             <button
